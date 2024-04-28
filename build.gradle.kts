@@ -22,7 +22,6 @@ dependencies {
 group = "de.jangassen"
 version = "1.2.0"
 description = "JFA"
-java.sourceCompatibility = JavaVersion.VERSION_17
 
 java {
     withSourcesJar()
