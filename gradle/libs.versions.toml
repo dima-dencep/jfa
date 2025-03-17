@@ -2,7 +2,7 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-net-java-dev-jna-jna = "5.14.0"
+net-java-dev-jna-jna = "5.17.0"
 org-junit-jupiter-junit-jupiter-engine = "5.10.2"
 
 [libraries]
