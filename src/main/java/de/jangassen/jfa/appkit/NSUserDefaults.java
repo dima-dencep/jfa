@@ -10,5 +10,5 @@ public interface NSUserDefaults extends NSObject {
     return ObjcToJava.invokeStatic(NSUserDefaults.class, "standardUserDefaults");
   }
 
-  String objectForKey(String key);
+  NSObject objectForKey(String key);
 }
