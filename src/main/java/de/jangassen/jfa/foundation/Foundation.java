@@ -9,6 +9,7 @@ import java.io.File;
 import java.lang.reflect.Proxy;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.function.Consumer;
 
 /**
  * @author spleaner
@@ -264,6 +265,13 @@ public final class Foundation {
 
   private static long convertCFEncodingToNS(long cfEncoding) {
     return myFoundationLibrary.CFStringConvertEncodingToNSStringEncoding(cfEncoding) & 0xffffffffffL;  // trim to C-type limits
+  }
+
+  public static void foreachCFArray(ID theArray, Consumer<ID> callback) {
+    long count = myFoundationLibrary.CFArrayGetCount(theArray);
+    for (long i = 0; i < count; i++) {
+      callback.accept(myFoundationLibrary.CFArrayGetValueAtIndex(theArray, i));
+    }
   }
 
   public static void cfRetain(ID id) {
